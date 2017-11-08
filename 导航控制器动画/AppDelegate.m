@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "VCFirst.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    VCFirst *vcFirst = [[VCFirst alloc]init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vcFirst];
+    vcFirst.title = @"1";
+    nav.navigationBar.translucent = NO;
+    self.window.rootViewController = nav;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
